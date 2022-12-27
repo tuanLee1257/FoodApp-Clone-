@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import Iconicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
-function SearchBar(props) {
+function SearchBar({ cityHandler }) {
   return (
     <View style={{ marginTop: 15, flexDirection: "row" }}>
       <GooglePlacesAutocomplete
+        // query={{ key: "KEY" }}
         placeholder="Search"
         styles={{
           textInput: {
@@ -29,7 +30,7 @@ function SearchBar(props) {
           </View>
         )}
         renderRightButton={() => (
-          <View
+          <TouchableOpacity
             style={{
               flexDirection: "row",
               marginRight: 8,
@@ -45,7 +46,7 @@ function SearchBar(props) {
               style={{ marginRight: 8 }}
             />
             <Text>Search</Text>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
